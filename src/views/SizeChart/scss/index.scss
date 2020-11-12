@@ -1,0 +1,30 @@
+@import '../../../globalStyles/scss/variables.scss';
+
+.sizeChartPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .sizeChartPage__title {
+    padding: 40px;
+    margin-top: 20px;
+
+    h1 {
+      font-size: $h1-font-size;
+
+      @media (max-width: 650px) {
+        font-size: 42px;
+      }
+    }
+  }
+
+  .sizeChartPage__body {
+    text-align: center;
+
+    .sizeChartImage__image {
+      width: 95vw;
+      max-width: 800px;
+      padding: 10px;
+    }
+  }
+}

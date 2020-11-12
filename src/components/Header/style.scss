@@ -1,0 +1,22 @@
+img{
+    height: auto;
+    width: 70%;
+}
+
+.header{
+    background-color: black;
+    height: 250px;
+    min-width: 100%;
+    color:white;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

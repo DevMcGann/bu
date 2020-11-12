@@ -1,0 +1,42 @@
+image: node:latest
+
+# Put back test when Babel transform jsx it's fixed
+# stages:
+#   - dev
+#   - production
+
+stages:
+  - dev
+  - production
+
+dev:
+  before_script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+
+  type: deploy
+  stage: dev
+  image: ruby:latest
+
+  script:
+    - dpl --provider=heroku --app=$HEROKU_APP_STAGING --api-key=$HEROKU_API_KEY
+
+  only:
+    - qa #  the branch you want to publish
+
+production:
+  before_script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+
+  type: deploy
+  stage: production
+  image: ruby:latest
+
+  script:
+    - dpl --provider=heroku --app=$HEROKU_APP_PRODUCTION --api-key=$HEROKU_API_KEY
+
+  only:
+    - master #  the branch you want to publish
